@@ -1,1 +1,1 @@
-# animal-quizz-test
+# Basic App

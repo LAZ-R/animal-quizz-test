@@ -1,0 +1,481 @@
+@import url("./variables.css");
+
+:root {
+    --color-box-height: 50px;
+    --border-radius: 500px;
+    --gap: 5px;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Inter;
+    user-select: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    user-select: none;
+    margin: 0;
+    /* margin-bottom: 15px; */
+}
+
+p {
+    /* user-select: none; */
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+/* ############################################################################
+------------------------------- MAIN CONTAINERS -------------------------------
+############################################################################ */
+
+html,
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100vh; /* fallback for Js load */
+    min-height: var(--doc-height); height: var(--doc-height); max-height: var(--doc-height);
+    padding: 0;
+    margin: 0;
+    background-color: var(--html-background-color);
+    color: var(--font-color-default);
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    min-height: var(--header-height); height: var(--header-height); max-height: var(--header-height);
+    margin: 0;
+    padding: 0 var(--horizontal-padding);
+    background-color: var(--primary);
+    color: var(--primary-contrast);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 100%;
+    min-height: var(--main-height); height: var(--main-height); max-height: var(--main-height);
+    margin: 0;
+    padding: 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: var(--footer-height); height: var(--footer-height); max-height: var(--footer-height);
+    min-width: 100%;
+    margin: 0;
+    padding: 0 var(--horizontal-padding);
+    background-color: var(--primary);
+    color: var(--primary-contrast);
+}
+
+/* ############################################################################
+--------------------------------- CLICKABLES ---------------------------------
+############################################################################ */
+
+/* -------------------------------- Anchors -------------------------------- */
+
+a {
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    color: var(--font-color-links);
+
+    &:hover {
+        text-decoration: underline;
+    }
+    
+    &:focus {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+/* -------------------------------- Buttons -------------------------------- */
+
+button {
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: var(--button-border-radius);
+    background-color: var(--gray-10);
+    padding: 2% 5% 2% 5%;
+    margin: 0;
+    font-size: var(--button-font-size);
+    flex-wrap: wrap;
+    text-align: center;
+    color: var(--gray-80);
+    box-shadow: 0px 4px 4px #00000046;
+
+    &:focus {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    &:active {
+        box-shadow: inset 0px 4px 4px #00000046;
+    }
+}
+    @media (hover:hover) and (pointer: fine) {
+        button:hover {
+            cursor: pointer;
+            background-color: var(--gray-20);
+        }
+    }
+
+/* -------------------------------- Switch -------------------------------- */
+
+/* The switch - the box around the slider */
+.switch {
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+  
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: var(--gray-20);
+    -webkit-transition: .3s;
+    transition: .3s ease-out;
+
+    &:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px; bottom: 4px;
+        background-color: white;
+        -webkit-transition: .3s;
+        transition: .3s ease-out;
+    }
+}
+  
+  
+input:checked + .slider {
+    background-color: var(--primary);
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+  
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+
+    &:before {
+        border-radius: 50%;
+    }
+}
+  
+
+/* ############################################################################
+------------------------------------ MODAL ------------------------------------
+############################################################################ */
+
+.modal-background {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #000000a4;
+    z-index: 50;
+    opacity: 0;
+    transition: opacity .2s linear;
+}
+
+.modal-div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    height: 60%;
+    border-radius: 20px;
+    background-color: #1d1d1d;
+    overflow-y: scroll;
+    opacity: 0;
+    transition: opacity .2s linear;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.modal-div::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.modal-div {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.modal-inner-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    min-height: 100%;
+    height: fit-content;
+    padding: 20px;
+    border-radius: 20px;
+    color: #ffffff;
+}
+
+.modal-title {
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* ---------------------------------------- APP SPECIFIC ---------------------------------------- */
+
+.main {
+
+    /* min-height: 100dvh; height: 100dvh; max-height: 100dvh; */
+    
+    & .title-area {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 6%; height: 6%; max-height: 6%;
+        /* background-color: aqua; */
+        color: var(--app-color-very-dark);
+    }
+
+    & .question-area {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 90%;
+        min-height: calc(62% - 32px); height: calc(62% - 32px); max-height: calc(62% - 32px);
+        background-color: var(--app-color-very-dark);
+        color: white;
+        margin-top: 10px;
+        margin-bottom: 22px;
+        border-radius: 20px;
+        overflow: hidden;
+
+        & .question-title-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 10%;
+        }
+
+        & .image-container {
+            position: relative;
+            display: flex;
+            min-width: 100%;
+            height: 50%;
+            overflow: hidden;
+    
+            & .image {
+                display: flex;
+                min-width: 100%;
+                min-height: 100%;
+                background-image: url();
+                background-position: center;
+                background-size: cover;
+                transform: scale(550%); /* filter: contrast(2); */
+            }
+    
+            & .blur {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: flex;
+                min-width: 100%;
+                min-height: 100%;
+    
+                &.blurred-10 { backdrop-filter: blur(18px) grayscale(100%); }
+                &.blurred-9  { backdrop-filter: blur(16px) grayscale(90%); }
+                &.blurred-8  { backdrop-filter: blur(14px) grayscale(80%); }
+                &.blurred-7  { backdrop-filter: blur(12px) grayscale(70%); }
+                &.blurred-6  { backdrop-filter: blur(10px) grayscale(60%); }
+                &.blurred-5  { backdrop-filter: blur(8px)  grayscale(50%); }
+                &.blurred-4  { backdrop-filter: blur(6px)  grayscale(40%); }
+                &.blurred-3  { backdrop-filter: blur(4px)  grayscale(25%); }
+                &.blurred-2  { backdrop-filter: blur(2px)  grayscale(10%); }
+                &.blurred-1  { backdrop-filter: none; }
+            }
+        }
+    
+        & .enhance-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 100%;
+            height: 40%;
+            padding: 0 20px;
+
+            & span {
+                font-size: 12px;
+                text-align: center;
+            }
+    
+            & button {
+                padding: 18px 30px;
+                text-transform: uppercase;
+                border-radius: 500px;
+                width: 75%;
+                background-color: var(--app-color-bright);
+                color: var(--app-color-very-dark);
+                font-size: 18px;
+                font-weight: 600;
+    
+                &:active {
+                    background-color: var(--app-color-medium);
+                }
+            }
+
+            & .points-container {
+                position: relative;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 95%;
+                height: 20px;
+                border-radius: 500px;
+                padding: 0;
+                background-color: var(--app-color-black);
+                color: #ffffff;
+                overflow: hidden;
+
+                .points-bar {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    min-height: 100%;
+                    background-color: var(--app-color-dark);
+
+                    &.w100 { min-width: 100%; }
+                    &.w90  { min-width:  90%; }
+                    &.w80  { min-width:  80%; }
+                    &.w70  { min-width:  70%; }
+                    &.w60  { min-width:  60%; }
+                    &.w50  { min-width:  50%; }
+                    &.w40  { min-width:  40%; }
+                    &.w30  { min-width:  30%; }
+                    &.w20  { min-width:  20%; }
+                    &.w10  { min-width:  10%; }
+                }
+
+                .points-text-container {
+                    position: absolute;
+                    left: calc(50% - 17px);
+                    display: flex;
+                    justify-content: center;
+                    width: 34px;
+
+                    & span {
+                        margin-right: 3px;
+                    }
+                }
+            }
+        }
+    }
+
+    & .answers-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        min-height: 32%; height: 32%; max-height: 32%;
+        background-color: var(--app-color-very-bright);
+        padding: 20px 20px;
+        gap: 20px;
+        border-radius: 20px 20px 0 0;
+        box-shadow: 0px -5px 15px #00000046;
+
+        & .answers-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            min-height: calc(50% - 10px); height: calc(50% - 10px); max-height: calc(50% - 10px);
+            gap: 20px;
+
+            & button {
+                width: 50%;
+                min-height: 100%; height: 100%; max-height: 100%;
+                border-radius: 10px;
+                background-color: var(--app-color-bright);
+                color: var(--app-color-very-dark);
+                overflow: hidden;
+                font-size: 14px;
+                font-weight: 600;
+                gap: 10px;
+                
+                &:active {
+                    background-color: var(--app-color-medium);
+                }
+
+                &.selected {
+                    background-color: #f1be7a;
+                }
+
+                &.good {
+                    background-color: #84f17a;
+                }
+
+                &.bad {
+                    background-color: #f17a7a;
+                }
+            }
+        }
+    }
+}
+
+/* ############################################################################
+-------------------------------- MEDIA QUERIES --------------------------------
+############################################################################ */
+
+/* -------------------------------- Tablets -------------------------------- */
+
+@media (min-width : 767px) and (max-width : 1279px) {
+    /* ... */
+}
+
+/* -------------------------------- Laptops -------------------------------- */
+
+@media (min-width: 1280px) and (max-width: 1919px) {
+    /* ... */
+}
+
+/* -------------------------------- Desktops -------------------------------- */
+
+@media (min-width: 1920px) {
+    /* ... */
+}
