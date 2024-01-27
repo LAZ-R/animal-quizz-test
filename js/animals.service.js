@@ -1,5 +1,5 @@
 import { RAW_ANIMALS, DIFFICULTY_LEVEL } from "./animals.data.js";
-import { getRandomIntegerBetween } from "./utils/utils.js";
+import { getRandomIntegerBetween, shuffleArray } from "./utils/utils.js";
 
 export const getAllAnimals = () => {
   let ANIMALS = [];
@@ -77,10 +77,23 @@ export const getPropositionsFromAnimalAnswer = (animalAnswer, quizzDifficulty) =
 
   switch (quizzDifficulty) {
     case 'facile':
-      animalsToSelectFrom = ANIMALS;
+      animalsToSelectFrom = ANIMALS.filter((animal) => {
+        if (animal.class.includes(animalAnswer.class)) {
+          return false;
+        }
+        if (animal.difficulty.includes(DIFFICULTY_LEVEL.hard)) {
+          return false;
+        }
+        return true;
+      });
       break;
     case 'moyen':
-      animalsToSelectFrom = ANIMALS;
+      animalsToSelectFrom = ANIMALS.filter((animal) => {
+        if (animal.family.includes(animalAnswer.family)) {
+          return false;
+        }
+        return true;
+      });
       break;
     case 'difficile':
       animalsToSelectFrom = ANIMALS.filter((animal) => {
@@ -101,6 +114,8 @@ export const getPropositionsFromAnimalAnswer = (animalAnswer, quizzDifficulty) =
     default:
       break;
   }
+
+  shuffleArray(animalsToSelectFrom);
 
   for (let index = 0; index < 3; index++) {
     let rnd = getRandomIntegerBetween(0, animalsToSelectFrom.length -1);

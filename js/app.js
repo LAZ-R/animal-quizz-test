@@ -1,7 +1,7 @@
 import { setStorage } from "./storage/storage.js";
-import { setDocumentHeight, setHTMLTitle, getRandomIntegerBetween } from "./utils/utils.js";
+import { setDocumentHeight, setHTMLTitle, getRandomIntegerBetween, shuffleArray } from "./utils/utils.js";
 import { APP_NAME, APP_VERSION } from "../properties.js";
-import { getRandomAnimalByQuizzDifficulty, getAnimalsByQuizzDifficulty, getPropositionsFromAnimalAnswer } from './animals.service.js'
+import { getRandomAnimalByQuizzDifficulty, getAnimalsByQuizzDifficulty, getPropositionsFromAnimalAnswer, getAllAnimals } from './animals.service.js'
 
 /* ############################################################################
 --------------------------------- CONSTANTES ---------------------------------
@@ -19,15 +19,6 @@ const zoom1 =  '100%';
 /* ############################################################################
 ---------------------------------- FONCTIONS ----------------------------------
 ############################################################################ */
-
-const shuffleArray = (array) => {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    const temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
-}
 
 const isGoodAnswer = (animalId) => {
   if (currentQuestionAnswer.id == animalId) {
@@ -74,6 +65,7 @@ const enhance = () => {
     case 2:
       renderImage(zoom1, 'blurred-1');
       reducePoints();
+      document.getElementById('enhanceButton').setAttribute('disabled', true);
       break;
     case 1:
       break;
@@ -84,20 +76,23 @@ const enhance = () => {
 window.enhance = enhance;
 
 const onButtonClick = (animalId) => {
-  const button = document.getElementById(`button${animalId}`);
-  button.classList.add('selected');
-  setTimeout(() => {
-    if (isGoodAnswer(animalId)) {
-      button.classList.replace('selected', 'good');
-    } else {
-      button.classList.replace('selected', 'bad');
-      document.getElementById(`button${currentQuestionAnswer.id}`).classList.add('good');
-    }
-    // TODO faire la popup
+  if (!hasAnswered) {
+    hasAnswered = true;
+    const button = document.getElementById(`button${animalId}`);
+    button.classList.add('selected');
     setTimeout(() => {
-      window.location = window.location;
+      if (isGoodAnswer(animalId)) {
+        button.classList.replace('selected', 'good');
+      } else {
+        button.classList.replace('selected', 'bad');
+        document.getElementById(`button${currentQuestionAnswer.id}`).classList.add('good');
+      }
+      // TODO faire la popup
+      setTimeout(() => { // TODO à virer pour remplacer par bouton
+        window.location = window.location;
+      }, 1500);
     }, 1000);
-  }, 1000);
+  }
 }
 window.onButtonClick = onButtonClick;
 
@@ -119,48 +114,48 @@ const setPropositions = (answer, propositions, quizzDifficulty) => {
     case 'facile':
       ANSWERS_CONTAINER.innerHTML = `
         <div class="answers-line">
-          <button id="button${propositions[0].id}" onclick="onButtonClick(${propositions[0].id})">${propositions[0].vernacularName}</button>
-          <button id="button${propositions[1].id}" onclick="onButtonClick(${propositions[1].id})">${propositions[1].vernacularName}</button>
+          <button id="button${propositions[0].id}" onclick="onButtonClick(${propositions[0].id})"><span class="large">${propositions[0].vernacularName}</span></button>
+          <button id="button${propositions[1].id}" onclick="onButtonClick(${propositions[1].id})"><span class="large">${propositions[1].vernacularName}</span></button>
         </div>
         <div class="answers-line">
-          <button id="button${propositions[2].id}" onclick="onButtonClick(${propositions[2].id})">${propositions[2].vernacularName}</button>
-          <button id="button${propositions[3].id}" onclick="onButtonClick(${propositions[3].id})">${propositions[3].vernacularName}</button>
+          <button id="button${propositions[2].id}" onclick="onButtonClick(${propositions[2].id})"><span class="large">${propositions[2].vernacularName}</span></button>
+          <button id="button${propositions[3].id}" onclick="onButtonClick(${propositions[3].id})"><span class="large">${propositions[3].vernacularName}</span></button>
         </div>
       `;
       break;
     case 'moyen':
       ANSWERS_CONTAINER.innerHTML = `
         <div class="answers-line">
-          <button id="button${propositions[0].id}" onclick="onButtonClick(${propositions[0].id})">${propositions[0].vernacularName}<i>(${propositions[0].scientificName})</i></button>
-          <button id="button${propositions[1].id}" onclick="onButtonClick(${propositions[1].id})">${propositions[1].vernacularName}<i>(${propositions[1].scientificName})</i></button>
+          <button id="button${propositions[0].id}" onclick="onButtonClick(${propositions[0].id})"><span class="large">${propositions[0].vernacularName}</span><span class="small"><i>${propositions[0].scientificName}</i></span></button>
+          <button id="button${propositions[1].id}" onclick="onButtonClick(${propositions[1].id})"><span class="large">${propositions[1].vernacularName}</span><span class="small"><i>${propositions[1].scientificName}</i></span></button>
         </div>
         <div class="answers-line">
-          <button id="button${propositions[2].id}" onclick="onButtonClick(${propositions[2].id})">${propositions[2].vernacularName}<i>(${propositions[2].scientificName})</i></button>
-          <button id="button${propositions[3].id}" onclick="onButtonClick(${propositions[3].id})">${propositions[3].vernacularName}<i>(${propositions[3].scientificName})</i></button>
+          <button id="button${propositions[2].id}" onclick="onButtonClick(${propositions[2].id})"><span class="large">${propositions[2].vernacularName}</span><span class="small"><i>${propositions[2].scientificName}</i></span></button>
+          <button id="button${propositions[3].id}" onclick="onButtonClick(${propositions[3].id})"><span class="large">${propositions[3].vernacularName}</span><span class="small"><i>${propositions[3].scientificName}</i></span></button>
         </div>
       `;
       break;
     case 'difficile':
       ANSWERS_CONTAINER.innerHTML = `
         <div class="answers-line">
-          <button id="button${propositions[0].id}" onclick="onButtonClick(${propositions[0].id})"><i>${propositions[0].scientificName}</i>(${propositions[0].vernacularName})</button>
-          <button id="button${propositions[1].id}" onclick="onButtonClick(${propositions[1].id})"><i>${propositions[1].scientificName}</i>(${propositions[1].vernacularName})</button>
+          <button id="button${propositions[0].id}" onclick="onButtonClick(${propositions[0].id})"><span class="large"><i>${propositions[0].scientificName}</i></span><span class="small">${propositions[0].vernacularName}</span></button>
+          <button id="button${propositions[1].id}" onclick="onButtonClick(${propositions[1].id})"><span class="large"><i>${propositions[1].scientificName}</i></span><span class="small">${propositions[1].vernacularName}</span></button>
         </div>
         <div class="answers-line">
-          <button id="button${propositions[2].id}" onclick="onButtonClick(${propositions[2].id})"><i>${propositions[2].scientificName}</i>(${propositions[2].vernacularName})</button>
-          <button id="button${propositions[3].id}" onclick="onButtonClick(${propositions[3].id})"><i>${propositions[3].scientificName}</i>(${propositions[3].vernacularName})</button>
+          <button id="button${propositions[2].id}" onclick="onButtonClick(${propositions[2].id})"><span class="large"><i>${propositions[2].scientificName}</i></span><span class="small">${propositions[2].vernacularName}</span></button>
+          <button id="button${propositions[3].id}" onclick="onButtonClick(${propositions[3].id})"><span class="large"><i>${propositions[3].scientificName}</i></span><span class="small">${propositions[3].vernacularName}</span></button>
         </div>
       `;
       break;
     case 'zoologiste':
       ANSWERS_CONTAINER.innerHTML = `
         <div class="answers-line">
-          <button id="button${propositions[0].id}" onclick="onButtonClick(${propositions[0].id})"><i>${propositions[0].scientificName}</i></button>
-          <button id="button${propositions[1].id}" onclick="onButtonClick(${propositions[1].id})"><i>${propositions[1].scientificName}</i></button>
+          <button id="button${propositions[0].id}" onclick="onButtonClick(${propositions[0].id})"><span class="large"><i>${propositions[0].scientificName}</i></span></button>
+          <button id="button${propositions[1].id}" onclick="onButtonClick(${propositions[1].id})"><span class="large"><i>${propositions[1].scientificName}</i></span></button>
         </div>
         <div class="answers-line">
-          <button id="button${propositions[2].id}" onclick="onButtonClick(${propositions[2].id})"><i>${propositions[2].scientificName}</i></button>
-          <button id="button${propositions[3].id}" onclick="onButtonClick(${propositions[3].id})"><i>${propositions[3].scientificName}</i></button>
+          <button id="button${propositions[2].id}" onclick="onButtonClick(${propositions[2].id})"><span class="large"><i>${propositions[2].scientificName}</i></span></button>
+          <button id="button${propositions[3].id}" onclick="onButtonClick(${propositions[3].id})"><span class="large"><i>${propositions[3].scientificName}</i></span></button>
         </div>
       `;
       break;
@@ -197,10 +192,7 @@ setHTMLTitle(APP_NAME);
 
 let currentPoints = 10;
 let currentQuestionAnswer;
-
-// Manuelle -----------------------------------------------
-
-let quizzDifficulty = 'moyen'
+let hasAnswered = false;
 
 const main = document.getElementById('main');
 main.innerHTML = `
@@ -218,9 +210,9 @@ main.innerHTML = `
     </div>
     <div class="enhance-container">
       <span>
-        À chaque amélioration de l'image, le nombre de points gagnés avec cette réponse diminuera de 1.
+        À chaque amélioration de l'image, le nombre de points potentiels attribués à cette réponse diminuera de 1.
       </span>
-      <button onclick="(enhance())">Améliorer</button>
+      <button id="enhanceButton" onclick="enhance()">Améliorer</button>
       <div class="points-container"><div id="pointsBar" class="points-bar w100"></div><span class="points-text-container"><span id="currentPoints">10</span> pts</span></div>
     </div>
   </div>
@@ -236,6 +228,12 @@ main.innerHTML = `
     </div>
   </div>
 `;
+
+// Manuelle -----------------------------------------------
+
+console.log(`Nombre d'espèces : ${getAllAnimals().length}`);
+
+let quizzDifficulty = 'moyen'
 
 currentQuestionAnswer = getRandomAnimalByQuizzDifficulty(quizzDifficulty);
 const propositions = getPropositionsFromAnimalAnswer(currentQuestionAnswer, quizzDifficulty);
