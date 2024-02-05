@@ -39,6 +39,7 @@
     --app-color-bright: #c1b5db;
     --app-color-medium: #a598c2;
     --app-color-dark: #6a6677;
+    --app-filter-dark: brightness(0) saturate(100%) invert(41%) sepia(6%) saturate(827%) hue-rotate(213deg) brightness(97%) contrast(97%);
     --app-color-very-dark: #46434f;
     --app-color-black: #38363f;
 

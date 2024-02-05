@@ -67,6 +67,32 @@ export const getRandomAnimalByQuizzDifficulty = (quizzDifficulty) => {
   return getRandomAnimalFromArray(getAnimalsByQuizzDifficulty(quizzDifficulty));
 }
 
+export const getTenRandomAnimalsByQuizzDifficulty = (quizzDifficulty) => {
+  let animalsToReturn = [];
+  let animal = getRandomAnimalByQuizzDifficulty(quizzDifficulty);
+  animalsToReturn.push(animal)
+
+  for (let index = 0; index < 9; index++) {
+    let animal = getRandomAnimalByQuizzDifficulty(quizzDifficulty);
+    let isHere = false;
+    if (animalsToReturn.includes(animal)) {
+      isHere = true;
+    }
+    while (isHere == true) {
+      animal = getRandomAnimalByQuizzDifficulty(quizzDifficulty);
+      if (animalsToReturn.includes(animal)) {
+        isHere = true;
+      } else {
+        isHere = false;
+      }
+    }
+    animalsToReturn.push(animal)
+  }
+  console.table(animalsToReturn);
+
+  return animalsToReturn;
+}
+
 
 
 export const getPropositionsFromAnimalAnswer = (animalAnswer, quizzDifficulty) => {
