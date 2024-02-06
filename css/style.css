@@ -370,6 +370,8 @@ input:checked + .slider:before {
         min-height: 6%; height: 6%; max-height: 6%;
         /* background-color: aqua; */
         color: var(--app-color-very-dark);
+        opacity: 1;
+        transition: all .3s linear;
 
         & h1 {
             font-size: 20px;
@@ -390,6 +392,8 @@ input:checked + .slider:before {
         margin-bottom: 22px;
         border-radius: 20px;
         overflow: hidden;
+        opacity: 1;
+        transition: all .3s linear;
 
         & .question-title-container {
             display: flex;
@@ -583,6 +587,7 @@ input:checked + .slider:before {
         gap: 20px;
         border-radius: 20px 20px 0 0;
         box-shadow: 0px -5px 15px #00000046;
+        transition: height .3s linear;
 
         & .answers-line {
             display: flex;
@@ -670,6 +675,7 @@ input:checked + .slider:before {
                     /* background-color: white; */
                     border-radius: 10px;
                     width: 80%;
+                    height: 20dvh;
                     padding: 10px 20px;
                     overflow: hidden;
 
@@ -698,8 +704,47 @@ input:checked + .slider:before {
                         flex-direction: column;
                         justify-content: center;
                         align-items: center;
-                        gap: 5px;
+                        gap: 20px;
                         z-index: 100;
+
+                        & .stars-container {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 20px;
+                        }
+                    }
+                }
+
+                & .overview {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 80%;
+                    height: fit-content;
+                    margin: 20px 0;
+                    gap: 6px;
+
+                    & .overview-line {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100%;
+                        background-color: var(--app-color-bright);
+                        padding: 8px 20px;
+                        font-size: 12px;
+                        font-weight: 600;
+                        text-transform: none;
+                        opacity: 1;
+                        border-radius: 5px;
+
+                        &.good {
+                            background-color: #BADBB3;
+                        }
+                        &.wrong {
+                            background-color: #DBB3BA;
+                        }
                     }
                 }
             }
@@ -710,6 +755,7 @@ input:checked + .slider:before {
                 padding: 15px 0;
                 width: 80%;
                 font-weight: 600;
+                text-transform: uppercase;
             }
         }
     }

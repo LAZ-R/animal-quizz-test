@@ -68,11 +68,11 @@ const onDifficultyClick = (quizzDifficulty) => {
     setUpQuizz(currentQuizzDifficulty);
 
     main.innerHTML = `
-      <div class="title-area">
+      <div id="titleContainer" class="title-area">
         <div class="difficulty-dot ${currentQuizzDifficulty}"></div><h1>Question <span id="currentQuestion"></span> / 10</h1>
       </div>
 
-      <div class="question-area">
+      <div id="questionContainer" class="question-area">
         <div class="question-title-container">
           <h2 id="popTitle">Quel est cet animal ?</h2>
         </div>
@@ -108,55 +108,52 @@ const onDifficultyClick = (quizzDifficulty) => {
 }
 window.onDifficultyClick = onDifficultyClick;
 
-
-
-
-
-
 const enhance = () => {
-  enhanceSound.pause(); enhanceSound.currentTime = 0; enhanceSound.play();
-  switch (currentPoints) {
-    case 10:
-      renderImage(zoom9, 'blurred-9');
-      reducePoints();
-      break;
-    case 9:
-      renderImage(zoom8, 'blurred-8');
-      reducePoints();
-      break;
-    case 8:
-      renderImage(zoom7, 'blurred-7');
-      reducePoints();
-      break;
-    case 7:
-      renderImage(zoom6, 'blurred-6');
-      reducePoints();
-      break;
-    case 6:
-      renderImage(zoom5, 'blurred-5');
-      reducePoints();
-      break;
-    case 5:
-      renderImage(zoom4, 'blurred-4');
-      reducePoints();
-      break;
-    case 4:
-      renderImage(zoom3, 'blurred-3');
-      reducePoints();
-      break;
-    case 3:
-      renderImage(zoom2, 'blurred-2');
-      reducePoints();
-      break;
-    case 2:
-      renderImage(zoom1, 'blurred-1');
-      reducePoints();
-      document.getElementById('enhanceButton').setAttribute('disabled', true);
-      break;
-    case 1:
-      break;
-    default:
-      break;
+  if (!hasAnswered) {
+    enhanceSound.pause(); enhanceSound.currentTime = 0; enhanceSound.play();
+    switch (currentPoints) {
+      case 10:
+        renderImage(zoom9, 'blurred-9');
+        reducePoints();
+        break;
+      case 9:
+        renderImage(zoom8, 'blurred-8');
+        reducePoints();
+        break;
+      case 8:
+        renderImage(zoom7, 'blurred-7');
+        reducePoints();
+        break;
+      case 7:
+        renderImage(zoom6, 'blurred-6');
+        reducePoints();
+        break;
+      case 6:
+        renderImage(zoom5, 'blurred-5');
+        reducePoints();
+        break;
+      case 5:
+        renderImage(zoom4, 'blurred-4');
+        reducePoints();
+        break;
+      case 4:
+        renderImage(zoom3, 'blurred-3');
+        reducePoints();
+        break;
+      case 3:
+        renderImage(zoom2, 'blurred-2');
+        reducePoints();
+        break;
+      case 2:
+        renderImage(zoom1, 'blurred-1');
+        reducePoints();
+        document.getElementById('enhanceButton').setAttribute('disabled', true);
+        break;
+      case 1:
+        break;
+      default:
+        break;
+    }
   }
 }
 window.enhance = enhance;
@@ -167,6 +164,7 @@ const onAnimalClick = (animalId) => {
     hasAnswered = true;
     const button = document.getElementById(`button${animalId}`);
     button.classList.add('selected');
+
     setTimeout(() => {
       if (isGoodAnswer(animalId)) {
         goodSound.play();
@@ -178,6 +176,8 @@ const onAnimalClick = (animalId) => {
         document.getElementById(`button${currentQuestionAnswer.id}`).classList.add('good');
         currentPoints = 0;
       }
+      
+      currentQuizz[currentIndex].points = currentPoints;
 
       // TODO faire la popup
       renderImage(zoom1, 'blurred-1');
@@ -216,21 +216,20 @@ const onAnimalClick = (animalId) => {
                 <div class="points-area">
                   <span style="font-size: 25px; font-weight: 600; margin: 0 auto; margin-bottom: 10px;">${isGoodAnswer(animalId) ? '🌟 BRAVO 🌟' : '😢 OUPS 😢'}</span>
                   <span>points gagnés : <span style="font-size: 25px; font-weight: 600;">${currentPoints}</span>/10</span>
-                  <span>total : <span style="font-size: 25px; font-weight: 600;">${currentTotal}</span>/100</span>
+                  <!-- <span>total : <span style="font-size: 25px; font-weight: 600;">${currentTotal}</span>/100</span> -->
                 </div>
-                <button onclick="onNextQuestionClick()">Question suivante</button>
+                <button onclick="onNextQuestionClick()">suivant</button>
               </div>
             `;
           } else {
-            quizzendSound.play();
             document.getElementById('answersContainer').innerHTML = `
               <div id="nextQuestionButtonArea" class="next-question-button-area">
                 <div class="points-area">
                   <div class="last-question-points">
-                    <span style="font-size: 20px; font-weight: 600; margin: 0 auto; margin-bottom: 5px;">${isGoodAnswer(animalId) ? '🌟 BRAVO 🌟' : '😢 OUPS 😢'}</span>
-                    <span>points gagnés : <span style="font-size: 20px; font-weight: 600;">${currentPoints}</span>/10</span>
+                    <span style="font-size: 25px; font-weight: 600; margin: 0 auto; margin-bottom: 10px;">${isGoodAnswer(animalId) ? '🌟 BRAVO 🌟' : '😢 OUPS 😢'}</span>
+                    <span>points gagnés : <span style="font-size: 25px; font-weight: 600;">${currentPoints}</span>/10</span>
                   </div>
-                  <div class="total-points">
+                  <!-- <div class="total-points">
                     <div class="bg"></div>
                     <div class="bg bg2"></div>
                     <div class="bg bg3"></div>
@@ -244,9 +243,9 @@ const onAnimalClick = (animalId) => {
                       </div>
                       <div>${getStars()}</div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
-                <button onclick="onRefreshClick()">Accueil</button>
+                <button onclick="onEndQuizzClick()">Terminer</button>
               </div>
             `;
           }
@@ -257,12 +256,6 @@ const onAnimalClick = (animalId) => {
 
       }, 2000);
       
-
-
-
-      /* setTimeout(() => { // TODO à virer pour remplacer par bouton
-        window.location = window.location;
-      }, 1500); */
     }, 1500);
   }
 }
@@ -281,11 +274,11 @@ const onNextQuestionClick = () => {
       currentPoints = 10;
 
       main.innerHTML = `
-        <div class="title-area">
+        <div id="titleContainer" class="title-area">
           <div class="difficulty-dot ${currentQuizzDifficulty}"></div><h1>Question <span id="currentQuestion"></span> / 10</h1>
         </div>
   
-        <div class="question-area">
+        <div id="questionContainer" class="question-area">
           <div class="question-title-container">
             <h2 id="popTitle">Quel est cet animal ?</h2>
           </div>
@@ -324,6 +317,59 @@ const onNextQuestionClick = () => {
 
 }
 window.onNextQuestionClick = onNextQuestionClick;
+
+const onEndQuizzClick = () => {
+  buttonSound.play();
+  console.log('END');
+  document.getElementById('titleContainer').style.opacity = 0;
+  document.getElementById('questionContainer').style.opacity = 0;
+  document.getElementById('nextQuestionButtonArea').style.opacity = 0;
+
+  setTimeout(() => {
+    quizzendSound.play();
+    document.getElementById('answersContainer').style.maxHeight = '95dvh';
+    document.getElementById('answersContainer').style.height = '95dvh';
+    document.getElementById('titleContainer').style.minHeight = '0dvh';
+    document.getElementById('titleContainer').style.height = '5dvh';
+    document.getElementById('questionContainer').style.minHeight = '0dvh';
+    document.getElementById('questionContainer').style.margin = 0;
+    document.getElementById('questionContainer').style.height = '0dvh';
+
+    document.getElementById('nextQuestionButtonArea').innerHTML = `
+      <div class="points-area">
+        
+        <div class="total-points">
+          <div class="bg"></div>
+          <div class="bg bg2"></div>
+          <div class="bg bg3"></div>
+          <div class="content">
+            <div style="display: flex; align-items: center">
+              <span class="difficulty-dot ${currentQuizzDifficulty}"></span>
+              <div style="display: flex; align-items: baseline">
+                <span style="font-size: 30px; font-weight: 600;">${currentTotal}</span>
+                <span>/100</span>
+              </div>
+            </div>
+            <div class="stars-container">${getStars()}</div>
+          </div>
+        </div>
+
+        <div id="overview" class="overview">
+          ${getOverview()}
+        </div>
+
+        <button onclick="onRefreshClick()">Accueil</button>
+      </div>
+    `;
+
+    setTimeout(() => {
+      document.getElementById('nextQuestionButtonArea').style.opacity = 1;
+    }, 300);
+
+  }, 300);
+
+}
+window.onEndQuizzClick = onEndQuizzClick;
 
 const onRefreshClick = () => {
   buttonSound.play();
@@ -464,6 +510,15 @@ const getStars = () => {
   }
 }
 
+const getOverview = () => {
+  let stringToReturn = ``;
+  for (let index = 0; index < currentQuizz.length; index++) {
+    const element = currentQuizz[index];
+    stringToReturn += `<div class="overview-line ${element.points == 0 ? 'wrong' : 'good'}"><span>${index + 1}</span><span>${element.answer.vernacularName}</span><span>${element.points}/10</span></div>`;
+  }
+  return stringToReturn;
+}
+
 /* ############################################################################
 ---------------------------------- EXECUTION ----------------------------------
 ############################################################################ */
@@ -492,18 +547,32 @@ console.log(`Nombre d'espèces : ${getAllAnimals().length}`);
 //console.table(getAllAnimals());
 
 const buttonSound = new Audio('./medias/sounds/button.mp3');
+buttonSound.volume = .8;
 const enhanceSound = new Audio('./medias/sounds/enhance.mp3');
 const goodSound = new Audio('./medias/sounds/good.mp3');
+goodSound.volume = .5;
 const answeredSound = new Audio('./medias/sounds/answered.mp3');
-answeredSound.volume = .5;
+answeredSound.volume = .4;
 const wrongSound = new Audio('./medias/sounds/wrong.mp3');
-wrongSound.volume = .6;
+wrongSound.volume = .4;
 const quizzendSound = new Audio('./medias/sounds/quizzend.mp3');
-quizzendSound.volume = .6;
+quizzendSound.volume = .5;
 
 /*  */
 
 let currentQuizzDifficulty = 'facile';
+let currentQuizz = [
+  { answer: {}, points: 0 },
+  { answer: {}, points: 0 },
+  { answer: {}, points: 0 },
+  { answer: {}, points: 0 },
+  { answer: {}, points: 0 },
+  { answer: {}, points: 0 },
+  { answer: {}, points: 0 },
+  { answer: {}, points: 0 },
+  { answer: {}, points: 0 },
+  { answer: {}, points: 0 },
+];
 let currentTotal = 0;
 let currentPoints = 10;
 let ANIMALS = [];
@@ -519,6 +588,13 @@ const setUpQuizz = () => {
   currentPoints = 10;
 
   ANIMALS = getTenRandomAnimalsByQuizzDifficulty(currentQuizzDifficulty);
+
+  for (let index = 0; index < ANIMALS.length; index++) {
+    const animal = ANIMALS[index];
+    currentQuizz[index].answer = animal;
+  }
+
+  //console.table(currentQuizz);
   
 }
 
