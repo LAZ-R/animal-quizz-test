@@ -15,9 +15,335 @@ export const DIFFICULTY_LEVEL = {
 }
 
 export const RAW_ANIMALS = [
+
+    /* ####################################################################### */
+  /* =========================== Chondrichthyes ============================ */
+  /* ####################################################################### */
+
+  /* ============================== Lamnidae =============================== */
+  /* ------------------------- (Requins-maqueraux) ------------------------- */
+
+  { // Grand requin blanc -----------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Grand requin blanc`,
+    scientificName: `Carcharodon carcharias`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.easy,
+    // ------------------------------------------------------------------------
+    class: `Chondrichthyes`,
+    family: `Lamnidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.VU,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://www.fishipedia.fr/wp-content/uploads/2019/06/REQUIN-BLANC_AP5A9973_FGUERIN.jpg', author: 'Fabrice Guérin' },
+      { url: 'https://images.squarespace-cdn.com/content/v1/5acccfb7f2e6b155434c7507/1534340350784-A55JLANVXNYA1X7VGPEZ/MYNATURE_AP5A9804_FGUERIN.jpg?format=2500w', author: 'Fabrice Guérin' },
+    ],
+  },
+  { // Requin mako ------------------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Requin mako`,
+    scientificName: `Isurus oxyrinchus`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.medium,
+    // ------------------------------------------------------------------------
+    class: `Chondrichthyes`,
+    family: `Lamnidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.EN,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://www.auxbulles.com/img/requin-mako-ou-requin-taupe-bleu-isurus-oxyrinchus-03.jpg', author: 'Michael Valos' },
+      { url: 'https://static.inaturalist.org/photos/74638241/medium.jpg', author: 'Fábio Olmos' },
+    ],
+  },
+  { // Petit requin taupe -----------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Petit requin taupe`,
+    scientificName: `Isurus paucus`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.hard,
+    // ------------------------------------------------------------------------
+    class: `Chondrichthyes`,
+    family: `Lamnidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.EN,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://pictures.blueplanetarchive.com/img-get/I0000AB0E0QL0z0k/s/1000/0166253-RFR.jpg', author: 'Rodrigo Friscione' },
+      { url: 'https://pictures.blueplanetarchive.com/img-get/I0000bIgXtuDylo8/s/1000/0166248-RFR.jpg', author: 'Rodrigo Friscione' },
+    ],
+  },
+  { // Requin saumon ----------------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Requin saumon`,
+    scientificName: `Lamna ditropis`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.medium,
+    // ------------------------------------------------------------------------
+    class: `Chondrichthyes`,
+    family: `Lamnidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.LC,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://i0.wp.com/gagebeasleywildlife.com/wp-content/uploads/2023/08/image-9.png?resize=1024%2C683&ssl=1', author: 'Corey Sean Ricketts' },
+      { url: 'https://i0.wp.com/gagebeasleywildlife.com/wp-content/uploads/2023/08/image-5.png?resize=1024%2C683&ssl=1', author: 'Corey Sean Ricketts' },
+    ],
+  },
+  { // Maraîche ---------------------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Maraîche`,
+    scientificName: `Lamna nasus`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.medium,
+    // ------------------------------------------------------------------------
+    class: `Chondrichthyes`,
+    family: `Lamnidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.VU,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://www.sharksandrays.com/wp-content/uploads/2023/10/Porbeagle-Shark-186.jpg', author: 'Andy Murch' },
+      { url: 'https://www.sharksandrays.com/wp-content/uploads/2023/10/Porbeagle-Shark-218.jpg', author: 'Andy Murch' },
+    ],
+  },
+
+  /* ============================= Sphyrnidae ============================== */
+  /* -------------------------- (Requins-marteau) -------------------------- */
+
+  { // Grand requin-marteau ---------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Grand requin-marteau`,
+    scientificName: `Sphyrna mokarran`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.easy,
+    // ------------------------------------------------------------------------
+    class: `Chondrichthyes`,
+    family: `Sphyrnidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.CR,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://animauxmarins.fr/wp-content/uploads/2023/06/grand-requin-marteau.jpg', author: '???' },
+      { url: 'https://www.aquaportail.com/aquabdd/photos/sphyrna-mokarran.jpg', author: '???' },
+    ],
+  },
+  { // Requin-marteau tiburo --------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Requin-marteau tiburo`,
+    scientificName: `Sphyrna tiburo`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.medium,
+    // ------------------------------------------------------------------------
+    class: `Chondrichthyes`,
+    family: `Sphyrnidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.EN,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://www.sharksandrays.com/wp-content/uploads/2020/09/Bonnethead-Shark-003.jpg', author: 'Andy Murch' },
+      { url: 'https://www.sharksandrays.com/wp-content/uploads/2020/09/Bonnethead-Shark-006.jpg', author: 'Andy Murch' },
+    ],
+  },
+  { // Requin-marteau écope -------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Requin-marteau écope`,
+    scientificName: `Sphyrna media`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.hard,
+    // ------------------------------------------------------------------------
+    class: `Chondrichthyes`,
+    family: `Sphyrnidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.CR,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://www.sharksandrays.com/wp-content/uploads/2020/09/Scoophead-Shark-048.jpg', author: 'Andy Murch' },
+      { url: 'https://www.sharksandrays.com/wp-content/uploads/2020/09/Scoophead-Shark-024.jpg', author: 'Andy Murch' },
+    ],
+  },
+  { // Requin-marteau planeur -------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Requin-marteau planeur`,
+    scientificName: `Eusphyra blochii`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.hard,
+    // ------------------------------------------------------------------------
+    class: `Chondrichthyes`,
+    family: `Sphyrnidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.EN,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://oceananimals.org/wp-content/uploads/2021/06/Winghead-Final-Shark.jpg', author: '???' },
+      { url: 'https://static.inaturalist.org/photos/28622466/medium.jpg', author: 'nicolubitz' },
+    ],
+  },
+
+
+
   /* ####################################################################### */
   /* ============================== MAMMALIA =============================== */
   /* ####################################################################### */
+
+  /* =============================== CANIDAE =============================== */
+  /* ------------------------------ (Canidés) ------------------------------ */
+
+  { // Renard roux -------------------------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Renard roux`,
+    scientificName: `Vulpes vulpes`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.easy,
+    // ------------------------------------------------------------------------
+    class: `Mammalia`,
+    family: `Canidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.LC,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/60493442/medium.jpg', author: 'Aleksandr Popov / Александр Попов' },
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/6568074/medium.jpg', author: 'Joanne Muis Redwood' },
+    ],
+  },
+  { // Renard polaire -------------------------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Renard polaire`,
+    scientificName: `Vulpes lagopus`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.medium,
+    // ------------------------------------------------------------------------
+    class: `Mammalia`,
+    family: `Canidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.LC,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/28389146/medium.jpg', author: 'Alexander Yakovlev' },
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/220490300/medium.jpeg', author: 'pgkaestner' },
+    ],
+  },
+  { // Fennec -------------------------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Fennec`,
+    scientificName: `Vulpes zerda`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.medium,
+    // ------------------------------------------------------------------------
+    class: `Mammalia`,
+    family: `Canidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.LC,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/38258258/medium.jpeg', author: 'Marc Faucher' },
+      { url: 'https://static.inaturalist.org/photos/61295887/medium.jpeg', author: 'Ann Victory' },
+    ],
+  },
+  { // Loup gris -------------------------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Loup gris`,
+    scientificName: `Canis lupus`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.easy,
+    // ------------------------------------------------------------------------
+    class: `Mammalia`,
+    family: `Canidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.LC,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/43410580/medium.jpg', author: 'Brian Starzomski' },
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/91802132/medium.jpg', author: 'Josh More' },
+    ],
+  },
+  { // Coyote -------------------------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Coyote`,
+    scientificName: `Canis latrans`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.medium,
+    // ------------------------------------------------------------------------
+    class: `Mammalia`,
+    family: `Canidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.LC,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/28639314/medium.jpg', author: 'Cameron Eckert' },
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/4790202/medium.jpg', author: 'Kent C. Jensen' },
+    ],
+  },
+  { // Lycaon -------------------------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Lycaon`,
+    scientificName: `Lycaon pictus`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.medium,
+    // ------------------------------------------------------------------------
+    class: `Mammalia`,
+    family: `Canidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.EN,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/168698834/medium.jpg', author: 'Blake Matheson' },
+      { url: 'https://static.inaturalist.org/photos/56160861/medium.jpg', author: 'Michael Woodruff' },
+    ],
+  },
+  { // Otocyon -------------------------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Otocyon`,
+    scientificName: `Otocyon megalotis`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.hard,
+    // ------------------------------------------------------------------------
+    class: `Mammalia`,
+    family: `Canidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.LC,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Otocyon_megalotis_-_Etosha_2014.jpg/800px-Otocyon_megalotis_-_Etosha_2014.jpg?20140329101920', author: 'Yathin S Krishnappa' },
+      { url: 'https://s3.animalia.bio/animals/photos/full/original/bat-eared-fox-otocyon-megalotis-at-kgalagadi-transfrontier-park-northern-cape-south-africa-5.webp', author: 'Derek Keats' },
+    ],
+  },
+  { // Chien viverrin -------------------------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Chien viverrin`,
+    scientificName: `Nyctereutes procyonoides`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.hard,
+    // ------------------------------------------------------------------------
+    class: `Mammalia`,
+    family: `Canidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.LC,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://static.inaturalist.org/photos/233596122/medium.jpeg', author: 'Tomek Niedźwiedź' },
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/244787561/medium.jpg', author: 'Jukka A. Lång' },
+    ],
+  },
+
   /* =============================== FELIDAE =============================== */
   /* ------------------------------ (Félins) ------------------------------- */
 
@@ -311,180 +637,6 @@ export const RAW_ANIMALS = [
     images: [
       { url: 'https://ultramarina.com/fichier/p_entete/18443/entete_img_egypte_marsa_alam_plongee_rsds_marsa_nakari_dugong_borut_furlan3835.jpg', author: 'Borut Furlan' },
       { url: 'https://ultramarina.com/thumb/ar__x/f__jpg/h__512/q__60/w__1280/zc__1/src/fichier/p_entete/18442/entete_img_egypte_marsa_alam_plongee_rsds_marsa_nakari_dugong_hannes_plach_6.jpg', author: 'Hannes Plach' },
-    ],
-  },
-
-  /* ####################################################################### */
-  /* =========================== Chondrichthyes ============================ */
-  /* ####################################################################### */
-
-  /* ============================== Lamnidae =============================== */
-  /* ------------------------- (Requins-maqueraux) ------------------------- */
-
-  { // Grand requin blanc -----------------------------------------------------
-    id: 0,
-    // ------------------------------------------------------------------------
-    vernacularName: `Grand requin blanc`,
-    scientificName: `Carcharodon carcharias`,
-    // ------------------------------------------------------------------------
-    difficulty: DIFFICULTY_LEVEL.easy,
-    // ------------------------------------------------------------------------
-    class: `Chondrichthyes`,
-    family: `Lamnidae`,
-    // ------------------------------------------------------------------------
-    uicn: UICN_STATUS.VU,
-    // ------------------------------------------------------------------------
-    images: [
-      { url: 'https://www.fishipedia.fr/wp-content/uploads/2019/06/REQUIN-BLANC_AP5A9973_FGUERIN.jpg', author: 'Fabrice Guérin' },
-      { url: 'https://images.squarespace-cdn.com/content/v1/5acccfb7f2e6b155434c7507/1534340350784-A55JLANVXNYA1X7VGPEZ/MYNATURE_AP5A9804_FGUERIN.jpg?format=2500w', author: 'Fabrice Guérin' },
-    ],
-  },
-  { // Requin mako ------------------------------------------------------------
-    id: 0,
-    // ------------------------------------------------------------------------
-    vernacularName: `Requin mako`,
-    scientificName: `Isurus oxyrinchus`,
-    // ------------------------------------------------------------------------
-    difficulty: DIFFICULTY_LEVEL.medium,
-    // ------------------------------------------------------------------------
-    class: `Chondrichthyes`,
-    family: `Lamnidae`,
-    // ------------------------------------------------------------------------
-    uicn: UICN_STATUS.EN,
-    // ------------------------------------------------------------------------
-    images: [
-      { url: 'https://www.auxbulles.com/img/requin-mako-ou-requin-taupe-bleu-isurus-oxyrinchus-03.jpg', author: 'Michael Valos' },
-      { url: 'https://static.inaturalist.org/photos/74638241/medium.jpg', author: 'Fábio Olmos' },
-    ],
-  },
-  { // Petit requin taupe -----------------------------------------------------
-    id: 0,
-    // ------------------------------------------------------------------------
-    vernacularName: `Petit requin taupe`,
-    scientificName: `Isurus paucus`,
-    // ------------------------------------------------------------------------
-    difficulty: DIFFICULTY_LEVEL.hard,
-    // ------------------------------------------------------------------------
-    class: `Chondrichthyes`,
-    family: `Lamnidae`,
-    // ------------------------------------------------------------------------
-    uicn: UICN_STATUS.EN,
-    // ------------------------------------------------------------------------
-    images: [
-      { url: 'https://pictures.blueplanetarchive.com/img-get/I0000AB0E0QL0z0k/s/1000/0166253-RFR.jpg', author: 'Rodrigo Friscione' },
-      { url: 'https://pictures.blueplanetarchive.com/img-get/I0000bIgXtuDylo8/s/1000/0166248-RFR.jpg', author: 'Rodrigo Friscione' },
-    ],
-  },
-  { // Requin saumon ----------------------------------------------------------
-    id: 0,
-    // ------------------------------------------------------------------------
-    vernacularName: `Requin saumon`,
-    scientificName: `Lamna ditropis`,
-    // ------------------------------------------------------------------------
-    difficulty: DIFFICULTY_LEVEL.medium,
-    // ------------------------------------------------------------------------
-    class: `Chondrichthyes`,
-    family: `Lamnidae`,
-    // ------------------------------------------------------------------------
-    uicn: UICN_STATUS.LC,
-    // ------------------------------------------------------------------------
-    images: [
-      { url: 'https://i0.wp.com/gagebeasleywildlife.com/wp-content/uploads/2023/08/image-9.png?resize=1024%2C683&ssl=1', author: 'Corey Sean Ricketts' },
-      { url: 'https://i0.wp.com/gagebeasleywildlife.com/wp-content/uploads/2023/08/image-5.png?resize=1024%2C683&ssl=1', author: 'Corey Sean Ricketts' },
-    ],
-  },
-  { // Maraîche ---------------------------------------------------------------
-    id: 0,
-    // ------------------------------------------------------------------------
-    vernacularName: `Maraîche`,
-    scientificName: `Lamna nasus`,
-    // ------------------------------------------------------------------------
-    difficulty: DIFFICULTY_LEVEL.medium,
-    // ------------------------------------------------------------------------
-    class: `Chondrichthyes`,
-    family: `Lamnidae`,
-    // ------------------------------------------------------------------------
-    uicn: UICN_STATUS.VU,
-    // ------------------------------------------------------------------------
-    images: [
-      { url: 'https://www.sharksandrays.com/wp-content/uploads/2023/10/Porbeagle-Shark-186.jpg', author: 'Andy Murch' },
-      { url: 'https://www.sharksandrays.com/wp-content/uploads/2023/10/Porbeagle-Shark-218.jpg', author: 'Andy Murch' },
-    ],
-  },
-
-  /* ============================= Sphyrnidae ============================== */
-  /* -------------------------- (Requins-marteau) -------------------------- */
-
-  { // Grand requin-marteau ---------------------------------------------------
-    id: 0,
-    // ------------------------------------------------------------------------
-    vernacularName: `Grand requin-marteau`,
-    scientificName: `Sphyrna mokarran`,
-    // ------------------------------------------------------------------------
-    difficulty: DIFFICULTY_LEVEL.easy,
-    // ------------------------------------------------------------------------
-    class: `Chondrichthyes`,
-    family: `Sphyrnidae`,
-    // ------------------------------------------------------------------------
-    uicn: UICN_STATUS.CR,
-    // ------------------------------------------------------------------------
-    images: [
-      { url: 'https://animauxmarins.fr/wp-content/uploads/2023/06/grand-requin-marteau.jpg', author: '???' },
-      { url: 'https://www.aquaportail.com/aquabdd/photos/sphyrna-mokarran.jpg', author: '???' },
-    ],
-  },
-  { // Requin-marteau tiburo --------------------------------------------------
-    id: 0,
-    // ------------------------------------------------------------------------
-    vernacularName: `Requin-marteau tiburo`,
-    scientificName: `Sphyrna tiburo`,
-    // ------------------------------------------------------------------------
-    difficulty: DIFFICULTY_LEVEL.medium,
-    // ------------------------------------------------------------------------
-    class: `Chondrichthyes`,
-    family: `Sphyrnidae`,
-    // ------------------------------------------------------------------------
-    uicn: UICN_STATUS.EN,
-    // ------------------------------------------------------------------------
-    images: [
-      { url: 'https://www.sharksandrays.com/wp-content/uploads/2020/09/Bonnethead-Shark-003.jpg', author: 'Andy Murch' },
-      { url: 'https://www.sharksandrays.com/wp-content/uploads/2020/09/Bonnethead-Shark-006.jpg', author: 'Andy Murch' },
-    ],
-  },
-  { // Requin-marteau écope -------------------------------------------
-    id: 0,
-    // ------------------------------------------------------------------------
-    vernacularName: `Requin-marteau écope`,
-    scientificName: `Sphyrna media`,
-    // ------------------------------------------------------------------------
-    difficulty: DIFFICULTY_LEVEL.hard,
-    // ------------------------------------------------------------------------
-    class: `Chondrichthyes`,
-    family: `Sphyrnidae`,
-    // ------------------------------------------------------------------------
-    uicn: UICN_STATUS.CR,
-    // ------------------------------------------------------------------------
-    images: [
-      { url: 'https://www.sharksandrays.com/wp-content/uploads/2020/09/Scoophead-Shark-048.jpg', author: 'Andy Murch' },
-      { url: 'https://www.sharksandrays.com/wp-content/uploads/2020/09/Scoophead-Shark-024.jpg', author: 'Andy Murch' },
-    ],
-  },
-  { // Requin-marteau planeur -------------------------------------------------
-    id: 0,
-    // ------------------------------------------------------------------------
-    vernacularName: `Requin-marteau planeur`,
-    scientificName: `Eusphyra blochii`,
-    // ------------------------------------------------------------------------
-    difficulty: DIFFICULTY_LEVEL.hard,
-    // ------------------------------------------------------------------------
-    class: `Chondrichthyes`,
-    family: `Sphyrnidae`,
-    // ------------------------------------------------------------------------
-    uicn: UICN_STATUS.EN,
-    // ------------------------------------------------------------------------
-    images: [
-      { url: 'https://oceananimals.org/wp-content/uploads/2021/06/Winghead-Final-Shark.jpg', author: '???' },
-      { url: 'https://static.inaturalist.org/photos/28622466/medium.jpg', author: 'nicolubitz' },
     ],
   },
 

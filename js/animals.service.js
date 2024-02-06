@@ -102,7 +102,7 @@ export const getPropositionsFromAnimalAnswer = (animalAnswer, quizzDifficulty) =
   ANIMALS.splice(ANIMALS.indexOf(animalAnswer), 1);
 
   switch (quizzDifficulty) {
-    case 'facile':
+    case 'facile': // Pas d'animaux de la même classe, pas d'animaux difficiles
       animalsToSelectFrom = ANIMALS.filter((animal) => {
         if (animal.class.includes(animalAnswer.class)) {
           return false;
@@ -113,15 +113,18 @@ export const getPropositionsFromAnimalAnswer = (animalAnswer, quizzDifficulty) =
         return true;
       });
       break;
-    case 'moyen':
+    case 'moyen': // Pas d'animaux de la même famille, pas d'animaux difficiles
       animalsToSelectFrom = ANIMALS.filter((animal) => {
         if (animal.family.includes(animalAnswer.family)) {
+          return false;
+        }
+        if (animal.difficulty.includes(DIFFICULTY_LEVEL.hard)) {
           return false;
         }
         return true;
       });
       break;
-    case 'difficile':
+    case 'difficile': // Que des animaux de la même classe
       animalsToSelectFrom = ANIMALS.filter((animal) => {
         if (!animal.class.includes(animalAnswer.class)) {
           return false;
@@ -129,7 +132,7 @@ export const getPropositionsFromAnimalAnswer = (animalAnswer, quizzDifficulty) =
         return true;
       });
       break;
-    case 'zoologiste':
+    case 'zoologiste': // Que des animaux de la même famille
       animalsToSelectFrom = ANIMALS.filter((animal) => {
         if (!animal.family.includes(animalAnswer.family)) {
           return false;

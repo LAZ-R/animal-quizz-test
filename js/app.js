@@ -222,6 +222,7 @@ const onAnimalClick = (animalId) => {
               </div>
             `;
           } else {
+            quizzendSound.play();
             document.getElementById('answersContainer').innerHTML = `
               <div id="nextQuestionButtonArea" class="next-question-button-area">
                 <div class="points-area">
@@ -497,6 +498,8 @@ const answeredSound = new Audio('./medias/sounds/answered.mp3');
 answeredSound.volume = .5;
 const wrongSound = new Audio('./medias/sounds/wrong.mp3');
 wrongSound.volume = .6;
+const quizzendSound = new Audio('./medias/sounds/quizzend.mp3');
+quizzendSound.volume = .6;
 
 /*  */
 
