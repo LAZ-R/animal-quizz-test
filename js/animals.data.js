@@ -18,7 +18,6 @@ export const RAW_ANIMALS = [
   /* ####################################################################### */
   /* ============================== MAMMALIA =============================== */
   /* ####################################################################### */
-
   /* =============================== FELIDAE =============================== */
   /* ------------------------------ (Félins) ------------------------------- */
 
@@ -36,8 +35,8 @@ export const RAW_ANIMALS = [
     uicn: UICN_STATUS.VU,
     // ------------------------------------------------------------------------
     images: [
-      `https://www.aquaportail.com/pictures2309/jeune-male-lion-panthera-leo.jpg`,
-      `https://d1jyxxz9imt9yb.cloudfront.net/medialib/4323/image/s768x1300/Lion_1.jpg`,
+      { url: 'https://www.biolib.cz/IMG/GAL/318547.jpg', author: 'Lubomír Prause' },
+      { url: 'https://d1jyxxz9imt9yb.cloudfront.net/medialib/4323/image/s768x1300/Lion_1.jpg', author: 'Kohai_Ben' },
     ],
   },
   { // Tigre ------------------------------------------------------------------
@@ -54,8 +53,8 @@ export const RAW_ANIMALS = [
     uicn: UICN_STATUS.EN,
     // ------------------------------------------------------------------------
     images: [
-      `https://cdn.futura-sciences.com/sources/images/glossaire/rte/12784_Panthera_tigris_corbetti_01.jpg`,
-      `https://static.nationalgeographic.fr/files/styles/image_3200/public/cr8akr.jpg?w=1600&h=900`,
+      { url: 'https://cdn.futura-sciences.com/sources/images/glossaire/rte/12784_Panthera_tigris_corbetti_01.jpg', author: 'H. Zell' },
+      { url: 'https://static.nationalgeographic.fr/files/styles/image_3200/public/cr8akr.jpg?w=1600&h=900', author: `imageBROKER.com GmbH & Co. KG / Alamy Banque D'Images` },
     ],
   },
   { // Léopard ----------------------------------------------------------------
@@ -72,8 +71,8 @@ export const RAW_ANIMALS = [
     uicn: UICN_STATUS.VU,
     // ------------------------------------------------------------------------
     images: [
-      `https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Leopard_%28Panthera_pardus%29.jpg/800px-Leopard_%28Panthera_pardus%29.jpg?20090803065820`,
-      `https://inaturalist-open-data.s3.amazonaws.com/photos/29532833/medium.jpg`,
+      { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Leopard_%28Panthera_pardus%29.jpg/800px-Leopard_%28Panthera_pardus%29.jpg?20090803065820', author: 'Haplochromis' },
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/29532833/medium.jpg', author: 'mikeloomis' },
     ],
   },
   { // Jaguar -----------------------------------------------------------------
@@ -90,8 +89,8 @@ export const RAW_ANIMALS = [
     uicn: UICN_STATUS.NT,
     // ------------------------------------------------------------------------
     images: [
-      `https://www.researchgate.net/publication/317343654/figure/fig1/AS:504578904780800@1497312393642/An-adult-male-of-Jaguar-Panthera-onca-along-the-margin-of-the-Tr-es-Irm-aos-River-in.png`,
-      `https://m.psecn.photoshelter.com/img-get/I0000Y6phlEOhLW4/s/900/900/Big-Male-Jaguar-in-Evening-Light.jpg`,
+      { url: 'https://www.researchgate.net/publication/317343654/figure/fig1/AS:504578904780800@1497312393642/An-adult-male-of-Jaguar-Panthera-onca-along-the-margin-of-the-Tr-es-Irm-aos-River-in.png', author: 'Rafael Hoogesteijn' },
+      { url: 'https://m.psecn.photoshelter.com/img-get/I0000Y6phlEOhLW4/s/900/900/Big-Male-Jaguar-in-Evening-Light.jpg', author: 'David P. Glatz' },
     ],
   },
   { // Panthère des neiges ----------------------------------------------------
@@ -108,8 +107,8 @@ export const RAW_ANIMALS = [
     uicn: UICN_STATUS.VU,
     // ------------------------------------------------------------------------
     images: [
-      `https://www.cms.int/sites/default/files/news_featured_image/snow_leopard_gerard_lacz_robert_harding.jpg`,
-      `https://live.staticflickr.com/65535/48106975378_bcd96c09f7_b.jpg`,
+      { url: 'https://www.cms.int/sites/default/files/news_featured_image/snow_leopard_gerard_lacz_robert_harding.jpg', author: 'Gerard Lacz / Robert Harding' },
+      { url: 'https://live.staticflickr.com/65535/48106975378_bcd96c09f7_b.jpg', author: 'Olivier Amiaud' },
     ],
   },
   { // Caracal ----------------------------------------------------------------
@@ -126,8 +125,8 @@ export const RAW_ANIMALS = [
     uicn: UICN_STATUS.LC,
     // ------------------------------------------------------------------------
     images: [
-      `https://natura-sciences.com/wp-content/uploads/2013/01/caracal.jpg`,
-      `https://medias.pourlascience.fr/api/v1/images/view/5a82ac0f8fe56f4a44548461/wide_1300/image.jpg`,
+      { url: 'https://natura-sciences.com/wp-content/uploads/2013/01/caracal.jpg', author: 'Nick and Melissa Baker' },
+      { url: 'https://medias.pourlascience.fr/api/v1/images/view/5a82ac0f8fe56f4a44548461/wide_1300/image.jpg', author: 'Stuart G Porter' },
     ],
   },
   { // Guépard ----------------------------------------------------------------
@@ -144,8 +143,8 @@ export const RAW_ANIMALS = [
     uicn: UICN_STATUS.VU,
     // ------------------------------------------------------------------------
     images: [
-      `https://previews.123rf.com/images/miksov/miksov1910/miksov191000009/133551068-un-gu%C3%A9pard-acinonyx-jubatus-dans-le-parc-national-kruger-en-afrique-du-sud.jpg`,
-      `https://live.staticflickr.com/7830/44773443200_1a08013d77_h.jpg`,
+      { url: 'https://previews.123rf.com/images/miksov/miksov1910/miksov191000009/133551068-un-gu%C3%A9pard-acinonyx-jubatus-dans-le-parc-national-kruger-en-afrique-du-sud.jpg', author: 'Ondrej Miksovsky ' },
+      { url: 'https://live.staticflickr.com/7830/44773443200_1a08013d77_h.jpg', author: 'Christoph Strässler' },
     ],
   },
   { // Ocelot -----------------------------------------------------------------
@@ -162,8 +161,8 @@ export const RAW_ANIMALS = [
     uicn: UICN_STATUS.LC,
     // ------------------------------------------------------------------------
     images: [
-      `https://www.aquaportail.com/aquabdd/photos/leopardus-pardalis.jpg`,
-      `https://www.monde-animal.fr/wp-content/uploads/2020/06/ocelot-leopardus-pardalis.jpg`,
+      { url: 'https://www.aquaportail.com/aquabdd/photos/leopardus-pardalis.jpg', author: '???' },
+      { url: 'https://www.monde-animal.fr/wp-content/uploads/2020/06/ocelot-leopardus-pardalis.jpg', author: 'elitravo' },
     ],
   },
   { // Serval -----------------------------------------------------------------
@@ -180,8 +179,8 @@ export const RAW_ANIMALS = [
     uicn: UICN_STATUS.LC,
     // ------------------------------------------------------------------------
     images: [
-      `https://www.monde-animal.fr/wp-content/uploads/2020/05/fiche-animale-monde-animal-serval.jpg.webp`,
-      `https://live.staticflickr.com/65535/49673259617_7cf5e24f2d_b.jpg`,
+      { url: 'https://www.monde-animal.fr/wp-content/uploads/2020/05/fiche-animale-monde-animal-serval.jpg.webp', author: 'Kyslynskyy' },
+      { url: 'https://live.staticflickr.com/65535/49673259617_7cf5e24f2d_b.jpg', author: 'Roger Wasley' },
     ],
   },
   { // Margay -----------------------------------------------------------------
@@ -198,8 +197,8 @@ export const RAW_ANIMALS = [
     uicn: UICN_STATUS.NT,
     // ------------------------------------------------------------------------
     images: [
-      `https://www.aquaportail.com/pictures2310/chat-americain-leopardus-wiedii.jpg`,
-      `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvx-0F_EPa36Rrz-O4LD5EpxNrJLm5XX31dw&usqp=CAU`,
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/46123268/medium.jpeg', author: 'leithallb' },
+      { url: 'https://pbs.twimg.com/media/BDkZziDCUAAN2xv?format=jpg&name=large', author: '???' },
     ],
   },
   { // Puma -------------------------------------------------------------------
@@ -216,8 +215,8 @@ export const RAW_ANIMALS = [
     uicn: UICN_STATUS.LC,
     // ------------------------------------------------------------------------
     images: [
-      `https://cdn.britannica.com/20/93520-050-3E663489/Puma.jpg`,
-      `https://inaturalist-open-data.s3.amazonaws.com/photos/9834553/original.jpg`,
+      { url: 'https://cdn.britannica.com/20/93520-050-3E663489/Puma.jpg', author: 'Michael Durham' },
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/9834553/original.jpg', author: 'Marc Faucher' },
     ],
   },
   { // Lynx boréal ------------------------------------------------------------
@@ -234,8 +233,8 @@ export const RAW_ANIMALS = [
     uicn: UICN_STATUS.LC,
     // ------------------------------------------------------------------------
     images: [
-      `https://www.aquaportail.com/aquabdd/photos/lynx-lynx.jpg`,
-      `https://www.parcsnationaux.fr/sites/parcsnationaux.fr/files/styles/slide_1500_1000/public/thumbnails/image/lynx.png?itok=PwOjtU2n`,
+      { url: 'https://www.aquaportail.com/aquabdd/photos/lynx-lynx.jpg', author: '???' },
+      { url: 'https://www.parcsnationaux.fr/sites/parcsnationaux.fr/files/styles/slide_1500_1000/public/thumbnails/image/lynx.png?itok=PwOjtU2n', author: 'Robert Chevalier' },
     ],
   },
 
@@ -256,7 +255,8 @@ export const RAW_ANIMALS = [
     uicn: UICN_STATUS.VU,
     // ------------------------------------------------------------------------
     images: [
-      `https://live.staticflickr.com/8160/6983022872_fb8dd6a597_b.jpg`,
+      { url: 'https://live.staticflickr.com/8160/6983022872_fb8dd6a597_b.jpg', author: 'Fábio N. Manfredini' },
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/34308035/medium.jpeg', author: 'Chris Wuerz' },
     ],
   },
   { // Lamantin des Caraïbes --------------------------------------------------
@@ -273,7 +273,8 @@ export const RAW_ANIMALS = [
     uicn: UICN_STATUS.CR,
     // ------------------------------------------------------------------------
     images: [
-      `https://inaturalist-open-data.s3.amazonaws.com/photos/17174106/original.jpg`,
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/17174106/medium.jpg', author: 'Keith Ramos' },
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/118210498/medium.jpeg', author: 'linimini' },
     ],
   },
   { // Lamantin d'Afrique -----------------------------------------------------
@@ -290,7 +291,8 @@ export const RAW_ANIMALS = [
     uicn: UICN_STATUS.VU,
     // ------------------------------------------------------------------------
     images: [
-      `https://www.zoochat.com/community/media/african-manatee-trichechus-senegalensis.397989/full?d=1527120833`,
+      { url: 'https://www.zoochat.com/community/media/african-manatee-trichechus-senegalensis.397989/full?d=1527120833', author: 'Giant Eland' },
+      { url: 'https://www.mondedesmammiferes.fr/wp-content/uploads/2019/01/Trichechus-senegalensis.jpg', author: 'Jiri Prochazka' },
     ],
   },
   { // Dugong -----------------------------------------------------------------
@@ -307,7 +309,8 @@ export const RAW_ANIMALS = [
     uicn: UICN_STATUS.VU,
     // ------------------------------------------------------------------------
     images: [
-      `https://ultramarina.com/fichier/p_entete/18443/entete_img_egypte_marsa_alam_plongee_rsds_marsa_nakari_dugong_borut_furlan3835.jpg`,
+      { url: 'https://ultramarina.com/fichier/p_entete/18443/entete_img_egypte_marsa_alam_plongee_rsds_marsa_nakari_dugong_borut_furlan3835.jpg', author: 'Borut Furlan' },
+      { url: 'https://ultramarina.com/thumb/ar__x/f__jpg/h__512/q__60/w__1280/zc__1/src/fichier/p_entete/18442/entete_img_egypte_marsa_alam_plongee_rsds_marsa_nakari_dugong_hannes_plach_6.jpg', author: 'Hannes Plach' },
     ],
   },
 
@@ -332,7 +335,8 @@ export const RAW_ANIMALS = [
     uicn: UICN_STATUS.VU,
     // ------------------------------------------------------------------------
     images: [
-      `https://www.fishipedia.fr/wp-content/uploads/2019/06/REQUIN-BLANC_AP5A9973_FGUERIN.jpg`,
+      { url: 'https://www.fishipedia.fr/wp-content/uploads/2019/06/REQUIN-BLANC_AP5A9973_FGUERIN.jpg', author: 'Fabrice Guérin' },
+      { url: 'https://images.squarespace-cdn.com/content/v1/5acccfb7f2e6b155434c7507/1534340350784-A55JLANVXNYA1X7VGPEZ/MYNATURE_AP5A9804_FGUERIN.jpg?format=2500w', author: 'Fabrice Guérin' },
     ],
   },
   { // Requin mako ------------------------------------------------------------
@@ -349,7 +353,8 @@ export const RAW_ANIMALS = [
     uicn: UICN_STATUS.EN,
     // ------------------------------------------------------------------------
     images: [
-      `https://www.auxbulles.com/img/requin-mako-ou-requin-taupe-bleu-isurus-oxyrinchus-03.jpg`,
+      { url: 'https://www.auxbulles.com/img/requin-mako-ou-requin-taupe-bleu-isurus-oxyrinchus-03.jpg', author: 'Michael Valos' },
+      { url: 'https://static.inaturalist.org/photos/74638241/medium.jpg', author: 'Fábio Olmos' },
     ],
   },
   { // Petit requin taupe -----------------------------------------------------
@@ -366,7 +371,8 @@ export const RAW_ANIMALS = [
     uicn: UICN_STATUS.EN,
     // ------------------------------------------------------------------------
     images: [
-      `https://www.americanoceans.org/wp-content/uploads/2023/05/Longfin-Mako-Shark-scaled-e1684344130699-1024x683.jpeg`,
+      { url: 'https://pictures.blueplanetarchive.com/img-get/I0000AB0E0QL0z0k/s/1000/0166253-RFR.jpg', author: 'Rodrigo Friscione' },
+      { url: 'https://pictures.blueplanetarchive.com/img-get/I0000bIgXtuDylo8/s/1000/0166248-RFR.jpg', author: 'Rodrigo Friscione' },
     ],
   },
   { // Requin saumon ----------------------------------------------------------
@@ -383,7 +389,8 @@ export const RAW_ANIMALS = [
     uicn: UICN_STATUS.LC,
     // ------------------------------------------------------------------------
     images: [
-      `https://external-preview.redd.it/bo9VjHuMNjM4KL1hsCh_JCfA65ZY89RgmYsTflOAeMQ.jpg?auto=webp&s=0c1f977c2505695fb24b9bc3623ea8519e6f1577`,
+      { url: 'https://i0.wp.com/gagebeasleywildlife.com/wp-content/uploads/2023/08/image-9.png?resize=1024%2C683&ssl=1', author: 'Corey Sean Ricketts' },
+      { url: 'https://i0.wp.com/gagebeasleywildlife.com/wp-content/uploads/2023/08/image-5.png?resize=1024%2C683&ssl=1', author: 'Corey Sean Ricketts' },
     ],
   },
   { // Maraîche ---------------------------------------------------------------
@@ -400,7 +407,8 @@ export const RAW_ANIMALS = [
     uicn: UICN_STATUS.VU,
     // ------------------------------------------------------------------------
     images: [
-      `https://www.sharksandrays.com/wp-content/uploads/2023/10/Porbeagle-Shark-186.jpg`,
+      { url: 'https://www.sharksandrays.com/wp-content/uploads/2023/10/Porbeagle-Shark-186.jpg', author: 'Andy Murch' },
+      { url: 'https://www.sharksandrays.com/wp-content/uploads/2023/10/Porbeagle-Shark-218.jpg', author: 'Andy Murch' },
     ],
   },
 
@@ -421,8 +429,8 @@ export const RAW_ANIMALS = [
     uicn: UICN_STATUS.CR,
     // ------------------------------------------------------------------------
     images: [
-      `https://animauxmarins.fr/wp-content/uploads/2023/06/grand-requin-marteau.jpg`,
-      `https://www.aquaportail.com/aquabdd/photos/sphyrna-mokarran.jpg`,
+      { url: 'https://animauxmarins.fr/wp-content/uploads/2023/06/grand-requin-marteau.jpg', author: '???' },
+      { url: 'https://www.aquaportail.com/aquabdd/photos/sphyrna-mokarran.jpg', author: '???' },
     ],
   },
   { // Requin-marteau tiburo --------------------------------------------------
@@ -439,14 +447,15 @@ export const RAW_ANIMALS = [
     uicn: UICN_STATUS.EN,
     // ------------------------------------------------------------------------
     images: [
-      `https://www.sharksandrays.com/wp-content/uploads/2020/09/Bonnethead-Shark-003.jpg`,
+      { url: 'https://www.sharksandrays.com/wp-content/uploads/2020/09/Bonnethead-Shark-003.jpg', author: 'Andy Murch' },
+      { url: 'https://www.sharksandrays.com/wp-content/uploads/2020/09/Bonnethead-Shark-006.jpg', author: 'Andy Murch' },
     ],
   },
-  { // Requin-marteau à petits yeux -------------------------------------------
+  { // Requin-marteau écope -------------------------------------------
     id: 0,
     // ------------------------------------------------------------------------
-    vernacularName: `Requin-marteau à petits yeux`,
-    scientificName: `Sphyrna tudes`,
+    vernacularName: `Requin-marteau écope`,
+    scientificName: `Sphyrna media`,
     // ------------------------------------------------------------------------
     difficulty: DIFFICULTY_LEVEL.hard,
     // ------------------------------------------------------------------------
@@ -456,7 +465,8 @@ export const RAW_ANIMALS = [
     uicn: UICN_STATUS.CR,
     // ------------------------------------------------------------------------
     images: [
-      `https://alchetron.com/cdn/smalleye-hammerhead-30bd15db-8cb1-4d03-a1ad-2824557d766-resize-750.jpeg`,
+      { url: 'https://www.sharksandrays.com/wp-content/uploads/2020/09/Scoophead-Shark-048.jpg', author: 'Andy Murch' },
+      { url: 'https://www.sharksandrays.com/wp-content/uploads/2020/09/Scoophead-Shark-024.jpg', author: 'Andy Murch' },
     ],
   },
   { // Requin-marteau planeur -------------------------------------------------
@@ -473,7 +483,8 @@ export const RAW_ANIMALS = [
     uicn: UICN_STATUS.EN,
     // ------------------------------------------------------------------------
     images: [
-      `https://oceananimals.org/wp-content/uploads/2021/06/Winghead-Final-Shark.jpg`,
+      { url: 'https://oceananimals.org/wp-content/uploads/2021/06/Winghead-Final-Shark.jpg', author: '???' },
+      { url: 'https://static.inaturalist.org/photos/28622466/medium.jpg', author: 'nicolubitz' },
     ],
   },
 

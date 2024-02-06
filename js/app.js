@@ -2,6 +2,7 @@ import { setStorage } from "./storage/storage.js";
 import { setDocumentHeight, setHTMLTitle, getRandomIntegerBetween, shuffleArray } from "./utils/utils.js";
 import { APP_NAME, APP_VERSION } from "../properties.js";
 import { getRandomAnimalByQuizzDifficulty, getAnimalsByQuizzDifficulty, getPropositionsFromAnimalAnswer, getAllAnimals, getTenRandomAnimalsByQuizzDifficulty } from './animals.service.js'
+import { requestWakeLock } from "../wakeLock.js";
 
 /* ############################################################################
 --------------------------------- CONSTANTES ---------------------------------
@@ -30,6 +31,7 @@ const isGoodAnswer = (animalId) => {
 // INTERACTIONS UTILISATEUR -------------------------------
 
 const onPlayClick = () => {
+  buttonSound.play();
   const main = document.getElementById('main');
   main.style.opacity = 0;
   setTimeout(() => {
@@ -55,6 +57,7 @@ const onPlayClick = () => {
 window.onPlayClick = onPlayClick;
 
 const onDifficultyClick = (quizzDifficulty) => {
+  buttonSound.play();
   currentQuizzDifficulty = quizzDifficulty;
   const main = document.getElementById('main');
   main.style.opacity = 0;
@@ -73,7 +76,7 @@ const onDifficultyClick = (quizzDifficulty) => {
         <div class="question-title-container">
           <h2 id="popTitle">Quel est cet animal ?</h2>
         </div>
-        <div class="image-container">
+        <div id="imageContainer" class="image-container">
           <div id="image" class="image"></div>
           <div id="blur" class="blur blurred-10"></div>
         </div>
@@ -111,6 +114,7 @@ window.onDifficultyClick = onDifficultyClick;
 
 
 const enhance = () => {
+  enhanceSound.pause(); enhanceSound.currentTime = 0; enhanceSound.play();
   switch (currentPoints) {
     case 10:
       renderImage(zoom9, 'blurred-9');
@@ -159,14 +163,17 @@ window.enhance = enhance;
 
 const onAnimalClick = (animalId) => {
   if (!hasAnswered) {
+    answeredSound.play();
     hasAnswered = true;
     const button = document.getElementById(`button${animalId}`);
     button.classList.add('selected');
     setTimeout(() => {
       if (isGoodAnswer(animalId)) {
+        goodSound.play();
         button.classList.replace('selected', 'good');
         currentTotal += currentPoints;
       } else {
+        wrongSound.play();
         button.classList.replace('selected', 'bad');
         document.getElementById(`button${currentQuestionAnswer.id}`).classList.add('good');
         currentPoints = 0;
@@ -174,6 +181,12 @@ const onAnimalClick = (animalId) => {
 
       // TODO faire la popup
       renderImage(zoom1, 'blurred-1');
+
+      let creditsArea = document.createElement('div');
+      creditsArea.setAttribute('class', 'credits-area');
+      creditsArea.innerHTML = `<span>&copy; ${currentImage.author}</span>`;
+      document.getElementById('imageContainer').appendChild(creditsArea);
+
       document.getElementById('popTitle').innerHTML = `${currentQuestionAnswer.vernacularName}`;
       document.getElementById('enhanceContainer').innerHTML = `
         <div class="classification-container">
@@ -255,6 +268,7 @@ const onAnimalClick = (animalId) => {
 window.onAnimalClick = onAnimalClick;
 
 const onNextQuestionClick = () => {
+  buttonSound.play();
   const main = document.getElementById('main');
   main.style.opacity = 0;
 
@@ -274,7 +288,7 @@ const onNextQuestionClick = () => {
           <div class="question-title-container">
             <h2 id="popTitle">Quel est cet animal ?</h2>
           </div>
-          <div class="image-container">
+          <div id="imageContainer" class="image-container">
             <div id="image" class="image"></div>
             <div id="blur" class="blur blurred-10"></div>
           </div>
@@ -311,6 +325,7 @@ const onNextQuestionClick = () => {
 window.onNextQuestionClick = onNextQuestionClick;
 
 const onRefreshClick = () => {
+  buttonSound.play();
   window.location = window.location;
 }
 window.onRefreshClick = onRefreshClick;
@@ -318,7 +333,8 @@ window.onRefreshClick = onRefreshClick;
 // GÉNÉRATION DOM -----------------------------------------
 
 const setImage = (animal) => {
-  let imgUrl = animal.images[getRandomIntegerBetween(0, animal.images.length - 1)];
+  currentImage = animal.images[getRandomIntegerBetween(0, animal.images.length - 1)];
+  let imgUrl = currentImage.url;
   const image = document.getElementById('image');
   image.style.backgroundImage = `url('${imgUrl}')`;
 }
@@ -412,7 +428,6 @@ const getStars = () => {
       } else {
         return '<span style="filter: var(--app-filter-dark);">⭐⭐⭐</span>';
       }
-      break;
     case 'moyen':
       if (currentTotal >= 70) {
         return '⭐⭐⭐';
@@ -433,7 +448,6 @@ const getStars = () => {
       } else {
         return '<span style="filter: var(--app-filter-dark);">⭐⭐⭐</span>';
       }
-      break;
     case 'zoologiste':
       if (currentTotal >= 50) {
         return '⭐⭐⭐';
@@ -444,7 +458,6 @@ const getStars = () => {
       } else {
         return '<span style="filter: var(--app-filter-dark);">⭐⭐⭐</span>';
       }
-      break;
     default:
       break;
   }
@@ -458,6 +471,7 @@ const getStars = () => {
 //setStorage();
 setDocumentHeight();
 setHTMLTitle(APP_NAME);
+await requestWakeLock();
 
 const main = document.getElementById('main');
 main.innerHTML = `
@@ -467,7 +481,7 @@ main.innerHTML = `
     </div>
     <button onclick="onPlayClick()">Jouer</button>
     <button disabled>Scores</button>
-    <span style="margin-top: auto;">V ${APP_VERSION}</span>
+    <span style="margin-top: auto;">v${APP_VERSION}</span>
   </div>
 `;
 
@@ -475,6 +489,14 @@ main.innerHTML = `
 
 console.log(`Nombre d'espèces : ${getAllAnimals().length}`);
 //console.table(getAllAnimals());
+
+const buttonSound = new Audio('./medias/sounds/button.mp3');
+const enhanceSound = new Audio('./medias/sounds/enhance.mp3');
+const goodSound = new Audio('./medias/sounds/good.mp3');
+const answeredSound = new Audio('./medias/sounds/answered.mp3');
+answeredSound.volume = .5;
+const wrongSound = new Audio('./medias/sounds/wrong.mp3');
+wrongSound.volume = .6;
 
 /*  */
 
@@ -485,6 +507,7 @@ let ANIMALS = [];
 let PROPOSITIONS = [];
 let currentIndex = 0;
 let currentQuestionAnswer;
+let currentImage = {url: '', author: ''};
 let hasAnswered = false;
 
 const setUpQuizz = () => {

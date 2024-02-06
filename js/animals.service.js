@@ -88,7 +88,7 @@ export const getTenRandomAnimalsByQuizzDifficulty = (quizzDifficulty) => {
     }
     animalsToReturn.push(animal)
   }
-  console.table(animalsToReturn);
+  //console.table(animalsToReturn);
 
   return animalsToReturn;
 }
