@@ -37,10 +37,10 @@ const onPlayClick = () => {
           </p>
           <span>Difficulté</span>
         </div> -->
-        <button onclick="onDifficultyClick('facile')" disabled><div class="difficulty-dot facile"></div>Facile</button>
+        <button onclick="onDifficultyClick('facile')"><div class="difficulty-dot facile"></div>Facile</button>
         <button onclick="onDifficultyClick('moyen')"><div class="difficulty-dot moyen"></div>Moyen</button>
         <button onclick="onDifficultyClick('difficile')"><div class="difficulty-dot difficile"></div>Difficile</button>
-        <button onclick="onDifficultyClick('zoologiste')" disabled><div class="difficulty-dot zoologiste"></div>Zoologiste</button>
+        <button onclick="onDifficultyClick('zoologiste')"><div class="difficulty-dot zoologiste"></div>Zoologiste</button>
       </div>
     `;
     
@@ -520,45 +520,25 @@ const renderImage = (zoomLevel, blurClass) => {
 const getStars = (quizzDifficulty, quizzTotal) => {
   switch (quizzDifficulty) {
     case 'facile':
-      if (quizzTotal >= 75) {
-        return '⭐⭐⭐';
-      } else if (quizzTotal >= 50) {
-        return '⭐⭐<span style="filter: var(--app-filter-dark);">⭐</span>';
-      } else if (quizzTotal >= 25) {
-        return '⭐<span style="filter: var(--app-filter-dark);">⭐⭐</span>';
-      } else {
-        return '<span style="filter: var(--app-filter-dark);">⭐⭐⭐</span>';
-      }
+      if (quizzTotal >= 75) { return '⭐⭐⭐'; } 
+      else if (quizzTotal >= 50) { return '⭐⭐<span style="filter: var(--app-filter-dark);">⭐</span>'; } 
+      else if (quizzTotal >= 25) { return '⭐<span style="filter: var(--app-filter-dark);">⭐⭐</span>'; } 
+      else { return '<span style="filter: var(--app-filter-dark);">⭐⭐⭐</span>'; }
     case 'moyen':
-      if (quizzTotal >= 70) {
-        return '⭐⭐⭐';
-      } else if (quizzTotal >= 40) {
-        return '⭐⭐<span style="filter: var(--app-filter-dark);">⭐</span>';
-      } else if (quizzTotal >= 20) {
-        return '⭐<span style="filter: var(--app-filter-dark);">⭐⭐</span>';
-      } else {
-        return '<span style="filter: var(--app-filter-dark);">⭐⭐⭐</span>';
-      }
+      if (quizzTotal >= 70) { return '⭐⭐⭐'; } 
+      else if (quizzTotal >= 40) { return '⭐⭐<span style="filter: var(--app-filter-dark);">⭐</span>'; } 
+      else if (quizzTotal >= 20) { return '⭐<span style="filter: var(--app-filter-dark);">⭐⭐</span>'; } 
+      else { return '<span style="filter: var(--app-filter-dark);">⭐⭐⭐</span>'; }
     case 'difficile':
-      if (quizzTotal >= 60) {
-        return '⭐⭐⭐';
-      } else if (quizzTotal >= 30) {
-        return '⭐⭐<span style="filter: var(--app-filter-dark);">⭐</span>';
-      } else if (quizzTotal >= 15) {
-        return '⭐<span style="filter: var(--app-filter-dark);">⭐⭐</span>';
-      } else {
-        return '<span style="filter: var(--app-filter-dark);">⭐⭐⭐</span>';
-      }
+      if (quizzTotal >= 60) { return '⭐⭐⭐'; } 
+      else if (quizzTotal >= 30) { return '⭐⭐<span style="filter: var(--app-filter-dark);">⭐</span>'; } 
+      else if (quizzTotal >= 15) { return '⭐<span style="filter: var(--app-filter-dark);">⭐⭐</span>'; } 
+      else { return '<span style="filter: var(--app-filter-dark);">⭐⭐⭐</span>'; }
     case 'zoologiste':
-      if (quizzTotal >= 50) {
-        return '⭐⭐⭐';
-      } else if (quizzTotal >= 25) {
-        return '⭐⭐<span style="filter: var(--app-filter-dark);">⭐</span>';
-      } else if (quizzTotal >= 10) {
-        return '⭐<span style="filter: var(--app-filter-dark);">⭐⭐</span>';
-      } else {
-        return '<span style="filter: var(--app-filter-dark);">⭐⭐⭐</span>';
-      }
+      if (quizzTotal >= 50) { return '⭐⭐⭐'; } 
+      else if (quizzTotal >= 25) { return '⭐⭐<span style="filter: var(--app-filter-dark);">⭐</span>'; } 
+      else if (quizzTotal >= 10) { return '⭐<span style="filter: var(--app-filter-dark);">⭐⭐</span>'; } 
+      else { return '<span style="filter: var(--app-filter-dark);">⭐⭐⭐</span>'; }
     default:
       break;
   }
@@ -696,7 +676,7 @@ main.innerHTML = `
 // Manuelle -----------------------------------------------
 
 console.log(`Nombre d'espèces : ${getAllAnimals().length}`);
-//console.table(getAllAnimals());
+console.table(getAllAnimals());
 
 const buttonSound = new Audio('./medias/sounds/button.mp3');
 buttonSound.volume = .8;

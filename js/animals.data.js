@@ -16,9 +16,309 @@ export const DIFFICULTY_LEVEL = {
 
 export const RAW_ANIMALS = [
 
-    /* ####################################################################### */
+
+  /* ####################################################################### */
+  /* ================================ Aves ================================= */
+  /* ####################################################################### */
+
+  /* ============================== Anatidae =============================== */
+  /* --------------------- Oies, cygnes, canards, etc. --------------------- */
+
+  { // Canard colvert -----------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Canard colvert`,
+    scientificName: `Anas platyrhynchos`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.easy,
+    // ------------------------------------------------------------------------
+    class: `Aves`,
+    family: `Anatidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.LC,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/222092/medium.jpg', author: 'Greg Lasley' },
+      { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Winter_duck.jpg/800px-Winter_duck.jpg?20231112213510', author: 'Bert de Tilly' },
+    ],
+  },
+  { // Canard mandarin -----------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Canard mandarin`,
+    scientificName: `Aix galericulata`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.easy,
+    // ------------------------------------------------------------------------
+    class: `Aves`,
+    family: `Anatidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.LC,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://img.theepochtimes.com/assets/uploads/2020/07/31/ET-7-Most-Uniquely-Beautiful-and-Special-Ducks-From-Around-the-World8.jpg', author: 'Johnsean' },
+      { url: 'https://static.inaturalist.org/photos/349913234/medium.jpg', author: 'Paul Werner' },
+    ],
+  },
+  { // Harle couronné -----------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Harle couronné`,
+    scientificName: `Lophodytes cucullatus`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.medium,
+    // ------------------------------------------------------------------------
+    class: `Aves`,
+    family: `Anatidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.LC,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://www.epochtimes.fr/assets/uploads/2020/08/ET-7-Most-Uniquely-Beautiful-and-Special-Ducks-From-Around-the-World7-e1596172337906.jpg', author: 'Tom Reichner' },
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/350201113/medium.jpg', author: 'warrenlayberry' },
+    ],
+  },
+  { // Harle piette -----------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Harle piette`,
+    scientificName: `Mergellus albellus`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.hard,
+    // ------------------------------------------------------------------------
+    class: `Aves`,
+    family: `Anatidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.LC,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://www.epochtimes.fr/assets/uploads/2020/08/ET-7-Most-Uniquely-Beautiful-and-Special-Ducks-From-Around-the-World9.jpg', author: 'MTKhaled mahmud' },
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/348260089/medium.jpg', author: 'inasiebert' },
+    ],
+  },
+  { // Canard à bosse -----------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Canard à bosse`,
+    scientificName: `Sarkidiornis melanotos`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.hard,
+    // ------------------------------------------------------------------------
+    class: `Aves`,
+    family: `Anatidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.LC,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://www.epochtimes.fr/assets/uploads/2020/08/ET-7-Most-Uniquely-Beautiful-and-Special-Ducks-From-Around-the-World3.jpg', author: 'Tom Meaker' },
+      { url: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Sarkidiornis_melanotos1.jpg', author: 'Adrian Pingstone' },
+    ],
+  },
+  { // Eider de Steller -----------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Eider de Steller`,
+    scientificName: `Polysticta stelleri`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.hard,
+    // ------------------------------------------------------------------------
+    class: `Aves`,
+    family: `Anatidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.VU,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/348294901/medium.jpg', author: 'lizamast' },
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/210961100/medium.jpg', author: 'stephen220' },
+    ],
+  },
+  { // Oie cendrée -----------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Oie cendrée`,
+    scientificName: `Anser anser`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.easy,
+    // ------------------------------------------------------------------------
+    class: `Aves`,
+    family: `Anatidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.LC,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/350195166/medium.jpeg', author: 'a_emmerson' },
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/350062275/medium.jpg', author: 'mani_raab' },
+    ],
+  },
+  { // Oie à tête barrée -----------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Oie à tête barrée`,
+    scientificName: `Anser indicus`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.medium,
+    // ------------------------------------------------------------------------
+    class: `Aves`,
+    family: `Anatidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.LC,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://static.inaturalist.org/photos/347134485/medium.jpg', author: 't_m_1981' },
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/350006996/medium.jpeg', author: 'spchoudhary40' },
+    ],
+  },
+  { // Cygne tuberculé -----------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Cygne tuberculé`,
+    scientificName: `Cygnus olor`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.easy,
+    // ------------------------------------------------------------------------
+    class: `Aves`,
+    family: `Anatidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.LC,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/350222609/medium.jpg', author: 'vogelbild' },
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/350203151/medium.jpeg', author: 'alxmbz' },
+    ],
+  },
+  { // Cygne à cou noir -----------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Cygne à cou noir`,
+    scientificName: `Cygnus melancoryphus`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.medium,
+    // ------------------------------------------------------------------------
+    class: `Aves`,
+    family: `Anatidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.LC,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/347829712/medium.jpeg', author: 'Elan Zucchetti' },
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/324115260/medium.jpeg', author: 'Ricardo D. Moyano' },
+    ],
+  },
+  { // Bernache à cou roux -----------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Bernache à cou roux`,
+    scientificName: `Branta ruficollis`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.hard,
+    // ------------------------------------------------------------------------
+    class: `Aves`,
+    family: `Anatidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.VU,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Branta_ruficollis_by_Fr%C3%A9d%C3%A9ric_Bisson.jpg/800px-Branta_ruficollis_by_Fr%C3%A9d%C3%A9ric_Bisson.jpg?20160103164930', author: 'Frédéric Bisson' },
+      { url: 'https://static.inaturalist.org/photos/350168566/medium.jpg', author: 'Daniel Duret' },
+    ],
+  },
+
+  /* ####################################################################### */
   /* =========================== Chondrichthyes ============================ */
   /* ####################################################################### */
+
+  /* =========================== Carcharhinidae ============================ */
+  /* ----------------------------------------------------------------------- */
+  { // Requin-tigre -----------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Requin-tigre`,
+    scientificName: `Galeocerdo cuvier`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.easy,
+    // ------------------------------------------------------------------------
+    class: `Chondrichthyes`,
+    family: `Carcharhinidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.NT,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Tiger_shark.jpg/800px-Tiger_shark.jpg?20100112191810', author: 'Albert Kok' },
+      { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Tiger_shark%282%29.jpg/800px-Tiger_shark%282%29.jpg?20120210203131', author: 'Albert Kok' },
+    ],
+  },
+  { // Requin à pointes noires -----------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Requin à pointes noires`,
+    scientificName: `Carcharhinus melanopterus`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.easy,
+    // ------------------------------------------------------------------------
+    class: `Chondrichthyes`,
+    family: `Carcharhinidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.NT,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/344307853/medium.jpeg', author: 'lkustra' },
+      { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Reef0925_-_Flickr_-_NOAA_Photo_Library.jpg/800px-Reef0925_-_Flickr_-_NOAA_Photo_Library.jpg?20151103101144', author: 'David Burdick' },
+    ],
+  },
+  { // Requin gris de récif -----------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Requin gris de récif`,
+    scientificName: `Carcharhinus amblyrhynchos`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.easy,
+    // ------------------------------------------------------------------------
+    class: `Chondrichthyes`,
+    family: `Carcharhinidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.EN,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Grey_reef_shark.jpg/800px-Grey_reef_shark.jpg?20070929155627', author: 'Albert Kok' },
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/348068616/medium.jpg', author: 'Michal Slaný' },
+    ],
+  },
+  { // Requin longimane -----------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Requin longimane`,
+    scientificName: `Carcharhinus longimanus`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.medium,
+    // ------------------------------------------------------------------------
+    class: `Chondrichthyes`,
+    family: `Carcharhinidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.CR,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://static.inaturalist.org/photos/326866529/medium.jpeg', author: 'Halvard Aas Midtun' },
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/216219695/medium.jpg', author: 'Jonathan Wild' },
+    ],
+  },
+  { // Requin-citron -----------------------------------------------------
+    id: 0,
+    // ------------------------------------------------------------------------
+    vernacularName: `Requin-citron`,
+    scientificName: `Negaprion brevirostris`,
+    // ------------------------------------------------------------------------
+    difficulty: DIFFICULTY_LEVEL.medium,
+    // ------------------------------------------------------------------------
+    class: `Chondrichthyes`,
+    family: `Carcharhinidae`,
+    // ------------------------------------------------------------------------
+    uicn: UICN_STATUS.VU,
+    // ------------------------------------------------------------------------
+    images: [
+      { url: 'https://static.inaturalist.org/photos/288235405/medium.png', author: 'Rachel Crane' },
+      { url: 'https://inaturalist-open-data.s3.amazonaws.com/photos/287806954/medium.jpg', author: 'Rafi Amar' },
+    ],
+  },
 
   /* ============================== Lamnidae =============================== */
   /* ------------------------- (Requins-maqueraux) ------------------------- */
@@ -114,6 +414,11 @@ export const RAW_ANIMALS = [
     ],
   },
 
+  /* ========================== Orectolobiformes =========================== */
+  /* ------------------------- Baleine, zebre, etc ------------------------- */
+
+  /* TODO */
+
   /* ============================= Sphyrnidae ============================== */
   /* -------------------------- (Requins-marteau) -------------------------- */
 
@@ -196,7 +501,7 @@ export const RAW_ANIMALS = [
   /* ============================== MAMMALIA =============================== */
   /* ####################################################################### */
 
-  /* =============================== CANIDAE =============================== */
+  /* =============================== Canidae =============================== */
   /* ------------------------------ (Canidés) ------------------------------ */
 
   { // Renard roux -------------------------------------------------------------------
@@ -344,7 +649,7 @@ export const RAW_ANIMALS = [
     ],
   },
 
-  /* =============================== FELIDAE =============================== */
+  /* =============================== Felidae =============================== */
   /* ------------------------------ (Félins) ------------------------------- */
 
   { // Lion -------------------------------------------------------------------
@@ -564,7 +869,7 @@ export const RAW_ANIMALS = [
     ],
   },
 
-  /* =============================== SIRENIA =============================== */
+  /* =============================== Sirenia =============================== */
   /* ------------------------ (Lamantins & dugong) ------------------------- */
 
   { // Lamantin d'Amazonie ----------------------------------------------------
