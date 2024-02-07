@@ -53,3 +53,33 @@ export const setHTMLTitle = (pageTitle) => {
   document.getElementById('title').innerHTML = pageTitle;
   document.getElementById('appleTitle').setAttribute('content', pageTitle);
 }
+
+/* ############################################################################
+-------------------------------- DATE & HEURE ---------------------------------
+############################################################################ */
+
+export const getFormattedDateFromTimestamp = (timestamp) => {
+  const date = new Date(timestamp);
+  return `${
+    date.getDate() < 10 
+    ? '0' + date.getDate().toString() 
+    : date.getDate()
+  }/${
+    (date.getMonth() + 1) < 10 
+    ? '0' + (date.getMonth() + 1).toString() 
+    : (date.getMonth() + 1)
+  }/${date.getFullYear().toString().split('')[2]}${date.getFullYear().toString().split('')[3]}`;
+}
+
+export const getFormattedTimeFromTimestamp = (timestamp) => {
+  const date = new Date(timestamp);
+  return `${
+    date.getHours() < 10 
+    ? '0' + date.getHours().toString() 
+    : date.getHours()
+  }:${
+    date.getMinutes() < 10 
+    ? '0' + date.getMinutes().toString() 
+    : date.getMinutes()
+  }`;
+}

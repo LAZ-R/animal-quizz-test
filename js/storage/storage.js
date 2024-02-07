@@ -8,7 +8,7 @@ export const setStorage = () => {
     STORAGE.setItem(`${appShortName}FirstTime`, '0');
     
     let userTMP = {
-      properties: [],
+      completed: [],
     };
     STORAGE.setItem(`${appShortName}User`, JSON.stringify(userTMP));
   }
